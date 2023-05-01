@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Ошибка верификации email</h5>
+                    <p class="card-text">К сожалению, мы не смогли подтвердить ваш email. Возможно срок действия ссылки истек</p>
+                    <a href="{% url 'accounts:resend_email_verification' %}" class="btn btn-primary">Отправить новое письмо для
+                        подтверждения</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

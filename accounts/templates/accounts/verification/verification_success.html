@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mt-5">
+                <div class="card-body text-center">
+                    <h3 class="mb-3">Подтверждение почты прошло успешно!</h3>
+                    <p class="lead">Теперь вы можете использовать все функции нашего сайта.</p>
+                    <a href="{% url 'homepage'%}" class="btn btn-primary mt-3">Вернуться на главную страницу</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1 class="my-4">Добро пожаловать в Task Manager!</h1>
+    <p>Мы поможем вам организовать свои задачи и улучшить продуктивность.</p>
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <div class="card">
+                <img src="https://via.placeholder.com/500x250.png?text=Placeholder+Image" class="card-img-top"
+                    alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Задачи</h5>
+                    <p class="card-text">Создавайте новые задачи и отслеживайте их статус. Организуйте свой рабочий
+                        процесс и не забывайте о важных делах.</p>
+                    <a href="{% url 'tasks:tasks' %}" class="btn btn-primary">Перейти к задачам</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <img src="https://via.placeholder.com/500x250.png?text=Placeholder+Image" class="card-img-top"
+                    alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Категории</h5>
+                    <p class="card-text">Создавайте категории для ваших задач и группируйте их по темам. Удобная система
+                        организации и поиска по категориям.</p>
+                    <a href="{% url 'tasks:categories' %}" class="btn btn-primary">Перейти к категориям</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

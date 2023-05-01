@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2 mt-5">
+            <h2 class="text-center mb-4">Добавить задачу</h2>
+            <form method="post" action="{% url 'tasks:add_task' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="{{ form.name.id_for_label }}">Название задачи:</label>
+                    {{ form.name }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ from.text.id_for_label }}">Описание задачи:</label>
+                    {{ form.text }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.category.id_for_label }}">Категория:</label>
+                    {{ form.category }}
+                    <!-- <select class="form-control" id="category" name="category">
+                        <option value="{{ form.category_id }}" selected disabled hidden>Выберите категорию</option>
+                        {% for category in categories %}
+                        <option value="{{ category }}">{{ category }}</option>
+                        {% endfor %}
+                    </select> -->
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.priority.id_for_label }}">Приоритет:</label>
+                    {{ form.priority }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.deadline.id_for_label }}">Дата выполнения:</label>
+                    {{ form.deadline }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.deadline.id_for_label }}">Выполнено:</label>
+                    {{ form.completed }}
+                </div>
+                {{ form.errors }}
+                <dir class="form-group"></dir>
+                <button type="submit" class="btn btn-primary">Добавить</button>
+                <a href="{% url 'tasks:tasks' %}" class="btn btn-secondary">Отмена</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

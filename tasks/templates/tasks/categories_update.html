@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content  %}
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center">Редактировать категорию {{ category.name }}</h3>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="{% url 'tasks:update_category' category.id %}">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="{{ form.name.id_for_label }}">Название категории:</label>
+                            {{ form.name }}
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Сохранить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content  %}

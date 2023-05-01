@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Письмо верификации отправлено </h5>
+                    <p class="card-text">Перейдите по ссылке в письме</p>
+                    <a href="{% url 'homepage' %}" class="btn btn-primary">Главная страница</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
